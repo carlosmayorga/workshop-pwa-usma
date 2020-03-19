@@ -1,0 +1,45 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.css",
+          "/*.js",
+          "/manifest.json"
+        ],
+        "urls": [
+          "https://stackpath.bootstrapcdn.com/**",
+          "https://restcountries.eu/data/**"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "paises-apirest",
+      "urls": [
+        "https://restcountries.eu/rest/v2/lang/es"
+      ],
+      "cacheConfig": {
+       "maxSize": 20,
+       "maxAge": "5h",
+       "timeout": "5s",
+       "strategy": "freshness"
+      }
+    }
+  ]
+}
